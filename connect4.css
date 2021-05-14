@@ -13,18 +13,29 @@
   margin: 5px;
   width: 80%;
   height: 80%;
-  border-radius: 10px;
+  border-radius: 50px;
+  animation-name: fall-animation;
+  animation-duration: 1s;
+}
+
+@keyframes fall-animation {
+  from {
+    transform: translateY(-500px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
-.player-one {
+.p1 {
   background-color: red;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
-.player-two {
+.p2 {
   background-color: blue;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 /* column-top is table row of clickable areas for each column */
 
