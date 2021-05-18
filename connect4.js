@@ -47,14 +47,17 @@ function makeHtmlBoard() {
     top.append(headCell);
   }
   htmlBoard.append(top);
+  // declare a variable called headCell which will have a created element called "td" and will be less than the width of x.
+  //make headCell an id with a value of x
+  //top will be added to headCell and then htmlBoard will add top.
 
   // TODO: add comment for this code
   for (let y = 0; y < HEIGHT; y++) {
     const row = document.createElement("tr");
-    // declare a variable called row and create it as an element called tr which takes into account the height of "y"
+    // declare a variable called row and create it as an element called tr which will be less than the height of y
     for (let x = 0; x < WIDTH; x++) {
       const cell = document.createElement("td");
-      //declare a variable called cell and create it as an element called td which takes into account the width of "x"
+      //declare a variable called cell and create it as an element called td which will be less than the width of x
       cell.setAttribute("id", `${y}-${x}`);
       row.append(cell);
       //make cell an id with the ability to accept different x and y values. add the cells to the rows
@@ -74,7 +77,7 @@ function findSpotForCol(x) {
     }
   }
   return null;
-}
+} //find the lowest spot in column by looking at y. if it is filled, ignore it.
 
 /** placeInTable: update DOM to place piece into HTML table of board */
 
@@ -88,6 +91,8 @@ function placeInTable(y, x) {
   const spot = document.getElementById(`${y}-${x}`);
   spot.append(piece);
 }
+//declare a variable called piece and make it a div. add piece and currPlayer to a class list and plae in a box
+//declare a variable called spot and create an element with the id of string y-x
 
 /** endGame: announce game end */
 
@@ -122,10 +127,11 @@ function handleClick(evt) {
   // TODO: check if all cells in board are filled; if so call, call endGame
   if (board.every((row) => row.every((cell) => cell)))
     return endGame("This game is a tie!");
+  // check every row and cell to see if they are filled
   // switch players
   // TODO: switch currPlayer 1 <-> 2
   currPlayer = currPlayer === 1 ? 2 : 1;
-}
+} // if current player is 1, switch to 2. otherwise it should be 1
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
 

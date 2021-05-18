@@ -17,7 +17,7 @@
   animation-name: fall-animation;
   animation-duration: 1s;
 }
-
+/* make piece fall from top to bottom for 1s */
 @keyframes fall-animation {
   from {
     transform: translateY(-500px);
